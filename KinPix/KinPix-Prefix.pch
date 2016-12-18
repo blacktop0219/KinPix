@@ -1,0 +1,179 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+#import "AppDelegate.h"
+#import "ParentViewController.h"
+#import "TabParentViewController.h"
+#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
+#import "UIImageView+WebCache.h"
+#import "UIlabel+Resize.h"
+#import "Utils.h"
+#import "UserInfoStruct.h"
+#import "MIBadgeButton.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+#import "SDImageCache.h"
+#import "Constants.h"
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#endif
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+//#if !defined(DEBUG) || !(TARGET_IPHONE_SIMULATOR)
+//#define NSLog(...)
+//#endif
+
+#define IS_IPHONE_5     ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+
+#define mainColor           [UIColor colorWithRed:0.0 / 255.0 green:151.0 / 255.0 blue:211.0 / 255.0 alpha:1.0]
+#define mainFontColor       [UIColor colorWithRed:0.0 / 255.0 green:102.0 / 255.0 blue:196.0 / 255.0 alpha:1.0]
+#define photoBorderColor           [UIColor colorWithRed:209.0 / 255.0 green:209.0 / 255.0 blue:209.0 / 255.0 alpha:1.0]
+#define zinger_grayColor    [UIColor colorWithRed:98.0 / 255.0 green:98.0 / 255.0 blue:98.0 / 255.0 alpha:1.0]
+
+#define max_sharePhotoCount     16
+#define k_defaultAlbum          @"Default"
+#define k_favoriteAlbum         @"Favorites"
+#define k_DownloadPhotoPath     @"KinPix"
+
+///API
+#define PRODUC_MODE
+
+#ifdef PRODUC_MODE
+    #define URL_USER_MANAGE        @"https://api.kinpix.co/index.php/mobile/user/"
+    #define URL_PHOTO_MANAGE       @"https://api.kinpix.co/index.php/mobile/photo/"
+    #define URL_GROUP_MANAGE       @"https://api.kinpix.co/index.php/mobile/group/"
+    #define URL_FRIENDS_MANAGE     @"https://api.kinpix.co/index.php/mobile/friends/"
+    #define URL_EVENT_MANAGE       @"https://api.kinpix.co/index.php/mobile/event/"
+#else
+    #define URL_USER_MANAGE        @"http://192.168.1.30/photoshare/index.php/mobile/user/"
+    #define URL_PHOTO_MANAGE       @"http://192.168.1.30/photoshare/index.php/mobile/photo/"
+    #define URL_GROUP_MANAGE       @"http://192.168.1.30/photoshare/index.php/mobile/group/"
+    #define URL_FRIENDS_MANAGE     @"http://192.168.1.30/photoshare/index.php/mobile/friends/"
+    #define URL_EVENT_MANAGE       @"http://192.168.1.30/photoshare/index.php/mobile/event/"
+#endif
+
+// Amazon Related Config
+#define KEY_AMAZON_ANALYTICS       @"ca1b962525794a0085acd958bca30f78"
+#define KEY_AMAZON_COGNITO_ID      @"us-east-1:c16e78f1-f4eb-48a1-a5ca-44d9d819322e"
+//#define KEY_S3BUCKET_FEED          @"kinpix-app.feed"
+//#define KEY_S3BUCKET_THUMB         @"kinpix-app.thumb"
+#define KEY_S3BUCKET_USER          @"kinpix-app.user"
+#define KEY_S3BUCKET_KEYS          @"kinpix-keys"
+
+#define KEY_S3BUCKET_FEED          @"blog.main"
+#define KEY_S3BUCKET_THUMB         @"blog.thumb"
+
+#define KEY_IMAGE_THUMB_WIDTH       200
+
+/// User URLs
+#define FUNC_USER_SIGNIN                @"signin"
+#define FUNC_USER_LOGOUT                @"logout"
+#define FUNC_USER_SIGNUP                @"signup"
+#define FUNC_USER_CONFIRM_VERIFY        @"confirm_verify_code"
+#define FUNC_USER_UPDATE_PROFILE        @"update_profile"
+#define FUNC_USER_FORGOT_PASS           @"forgot_password"
+#define FUNC_USER_SEND_PINCODE          @"send_pincode"
+#define FUNC_USER_SET_NOTIFICATION      @"set_notification_state"
+#define FUNC_USER_RESEND_VERIFY         @"resend_verifycode"
+#define FUNC_USER_REFRESH_ALL           @"refresh_all_info"
+#define FUNC_USER_SET_VIEW_ORDER        @"set_view_order"
+#define FUNC_USER_UPDATE_POLICY         @"update_police_view"
+#define FUNC_USER_VIEW_MODE             @"change_view_mode"
+
+/// Photo URLs
+#define FUNC_PHOTO_SHARE                @"share_photo"
+#define FUNC_PHOTO_SAVE_PROPERTIES      @"save_properties"
+#define FUNC_PHOTO_DETAIL               @"get_photodetail_info"
+#define FUNC_PHOTO_DELETE_PHOTO         @"delete_photo"
+#define FUNC_PHOTO_FILTER               @"filter_photo"
+#define FUNC_PHOTO_LIKE_PHOTO           @"like_photo"
+#define FUNC_PHOTO_GET_LIKERS           @"get_photo_likers"
+#define FUNC_PHOTO_VIEWED_PHOTO         @"viewed_photo"
+#define FUNC_PHOTO_UPDATE_PHOTO         @"update_photo"
+#define FUNC_PHOTO_VIEWED_COMMONT       @"viewed_comment"
+#define FUNC_PHOTO_LEAVE_COMMENT        @"leave_comment"
+#define FUNC_PHOTO_FAVORITE_PHOTO       @"favorite_photo"
+#define FUNC_PHOTO_FLAG_PHOTO           @"flag_photo"
+#define FUNC_PHOTO_GET_COMMENTS         @"get_comments"
+#define FUNC_PHOTO_GET_FAV_PHOTO        @"get_favorite_photos"
+#define FUNC_PHOTO_GET_LASTVIED_PHOTO   @"get_lastviewed_photos"
+#define FUNC_PHOTO_GET_PHOTOINFO        @"get_photoinfos"
+#define FUNC_PHOTO_TRENDINGINFO         @"get_trending_photo"
+
+
+/// Group URLs
+#define FUNC_ALBUM_GET_LIST             @"get_album"
+#define FUNC_ALBUM_DEFAULT_GET_LIST     @"get_default_album"
+#define FUNC_ALBUM_CREATE               @"create_album"
+#define FUNC_ALBUM_UPDATE               @"update_album"
+#define FUNC_ALBUM_DELETE               @"delete_album"
+
+#define FUNC_BUCKET_CREATE              @"create_bucket"
+#define FUNC_BUCKET_DELETE              @"delete_bucket"
+#define FUNC_BUCKET_UPDATE              @"update_bucket"
+#define FUNC_BUCKET_GET_FRIENDS         @"get_friends_bucket"
+
+#define FUNC_GROUP_GET_LIST             @"get_groups"
+#define FUNC_GROUP_CREATE               @"create_group"
+#define FUNC_GROUP_UPDATE               @"update_group"
+#define FUNC_GROUP_DELETE               @"delete_group"
+#define FUNC_GROUP_DELETE_USER          @"delete_users_from_group"
+#define FUNC_GROUP_ADD_USER             @"add_users_to_group"
+
+
+/// Friends URLs
+#define FUNC_FRIEND_GET_LIST            @"get_friends"
+#define FUNC_FRIEND_SEND_REQ            @"send_friend_request"
+#define FUNC_FRIEND_PROC_REQ            @"process_friend_request"
+
+/// Eeven URLs
+#define FUNC_EVENT_SITEINFO             @"get_siteinfo"
+#define FUNC_EVENT_UPLOAD_KEY           @"get_uploadkeyfile"
+#define FUNC_EVENT_NOTIFICATION_STATE   @"get_notification_state"
+#define FUNC_EVENT_CLEAR_HISTORY        @"clear_history"
+#define FUNC_EVENT_CHECKED_HISTORY      @"checked_history_state"
+#define FUNC_EVENT_GET_COMMENTS         @"get_photo_comments"
+#define FUNC_EVENT_GET_APP_USAGE        @"get_app_usage"
+#define FUNC_EVENT_APP_PURCHARSED       @"set_appoption"
+#define FUNC_EVENT_GET_IMAGEQUALITY     @"get_imagequality"
+#define FUNC_EVENT_DELETE_DUR_PHOTO     @"delete_duration_photo"
+
+
+//Sound Files
+#define s_TabButton             @"TabButton"
+#define s_NotficationBadgeAlert @"NotficationBadgeAlert"
+#define s_Login                 @"Login"
+#define s_Logout                @"Logout"
+#define s_UploadPhoto           @"UploadPhoto"
+#define s_Friend                @"Friend"
+
+//Setting
+#define k_goBackSetting         @"k_goBackSetting"
+
+//Remember Password
+
+#define k_passRemember          @"passRemember"
+
+#define k_Yes   @"Yes"
+#define k_No    @"No"
+
+///Tab
+
+#define k_hideTab @"hideTab"
+#define k_showTab @"showTab"
+
+#define termsAcceptDate @"termsAcceptDate"
+#define privacyAcceptDate @"privacyAcceptDate"
+
+

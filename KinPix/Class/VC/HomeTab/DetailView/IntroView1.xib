@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
+            <connections>
+                <outlet property="viewIntro" destination="iN0-l3-epB" id="kz8-2t-jLK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view autoresizesSubviews="NO" contentMode="scaleToFill" id="iN0-l3-epB" customClass="IntroView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_intro.png" translatesAutoresizingMaskIntoConstraints="NO" id="JBR-Jf-Lzw">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                </imageView>
+                <view autoresizesSubviews="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZL-YI-lYJ">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NhD-nZ-Ttw">
+                            <rect key="frame" x="33" y="66" width="255" height="439"/>
+                            <subviews>
+                                <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5E-I6-FKo">
+                                    <rect key="frame" x="0.0" y="23" width="255" height="352"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xng-mZ-RmS">
+                                            <rect key="frame" x="510" y="0.0" width="255" height="352"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_intro3.png" translatesAutoresizingMaskIntoConstraints="NO" id="Egi-Xm-vR3">
+                                                    <rect key="frame" x="82" y="5" width="85" height="85"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPz-aY-KgY">
+                                                    <rect key="frame" x="20" y="104" width="215" height="41"/>
+                                                    <string key="text">Share memories using 
+photo buckets.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aph-dq-Pco">
+                                                    <rect key="frame" x="20" y="149" width="215" height="203"/>
+                                                    <string key="text">Create a photo bucket, then decide who can add photos.  Easy!  You can all see all photos added by anyone who has permissions to that photo bucket.
+
+Imagine being at a birthday party for 
+a family member. Now everyone attending that party can share the moments they captured in one photo bucket.  No more emailing or texting photos to multiple family members or close friends and forgetting to include someone</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OcA-ww-nX6">
+                                            <rect key="frame" x="255" y="0.0" width="255" height="352"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_intro2.png" translatesAutoresizingMaskIntoConstraints="NO" id="SMT-P1-UW3">
+                                                    <rect key="frame" x="82" y="5" width="85" height="85"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="002-hC-6AB">
+                                                    <rect key="frame" x="20" y="104" width="215" height="41"/>
+                                                    <string key="text">Quickly find the photos 
+you are looking for.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXo-gv-EJt">
+                                                    <rect key="frame" x="20" y="155" width="215" height="181"/>
+                                                    <string key="text">KinPix leverages a unique auto curation experience combining filters and a full text search that allows you to quickly find photos by family member, groups, albums, photo buckets, date shared, and even all captions and tags.  
+
+No more scrolling through endless 
+newsfeed’s, text messages or emails
+trying to find the photo(s) you are 
+looking for.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GCD-BO-0C4">
+                                            <rect key="frame" x="0.0" y="0.0" width="255" height="352"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_intro1.png" translatesAutoresizingMaskIntoConstraints="NO" id="AdZ-Dl-pZ5">
+                                                    <rect key="frame" x="82" y="5" width="85" height="85"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share Privately with the Family." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRt-0O-hq0">
+                                                    <rect key="frame" x="14" y="101" width="227" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMA-3p-flI">
+                                                    <rect key="frame" x="20" y="147" width="215" height="190"/>
+                                                    <string key="text">With KinPix, you are in complete control of your photos.  Share photos with parents, siblings, children, cousins, grandparents or a close friend.  You decide who you consider "Family" to be.
+
+You can easily see who can view each 
+photo and change those permissions at any time.  Everything is 100% private, no accidental posts to social media.  
+Your content is 100% yours.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                </scrollView>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K64-WR-x91">
+                                    <rect key="frame" x="222" y="8" width="25" height="25"/>
+                                    <state key="normal" image="btn_introclose.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="processClose:" destination="iN0-l3-epB" eventType="touchUpInside" id="ovf-RS-XFF"/>
+                                    </connections>
+                                </button>
+                                <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hLi-GX-rXy">
+                                    <rect key="frame" x="97" y="366" width="60" height="37"/>
+                                    <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="processPageChanged:" destination="iN0-l3-epB" eventType="valueChanged" id="V8n-y9-C9j"/>
+                                    </connections>
+                                </pageControl>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-l3-b4R">
+                                    <rect key="frame" x="0.0" y="397" width="255" height="42"/>
+                                    <color key="backgroundColor" red="0.0039215686269999999" green="0.72505132299999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" title="Next">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="processNext:" destination="iN0-l3-epB" eventType="touchUpInside" id="MCC-5K-1Fj"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="KV8-1x-lSa" appends="YES" id="Ra6-co-Lyq"/>
+                            </connections>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="KV8-1x-lSa" appends="YES" id="WOB-wT-DbS"/>
+                    </connections>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btnNext" destination="nqs-l3-b4R" id="SGB-yE-c9P"/>
+                <outlet property="pageMain" destination="hLi-GX-rXy" id="Ipf-TP-5c2"/>
+                <outlet property="scMain" destination="S5E-I6-FKo" id="Em0-Og-xm5"/>
+                <outlet property="viewInside" destination="NhD-nZ-Ttw" id="YkT-Ch-Tdg"/>
+            </connections>
+        </view>
+        <tapGestureRecognizer id="KV8-1x-lSa"/>
+    </objects>
+    <resources>
+        <image name="bg_intro.png" width="640" height="1136"/>
+        <image name="btn_introclose.png" width="55" height="55"/>
+        <image name="icon_intro1.png" width="168" height="169"/>
+        <image name="icon_intro2.png" width="168" height="169"/>
+        <image name="icon_intro3.png" width="168" height="169"/>
+    </resources>
+</document>

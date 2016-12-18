@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4EDE79571E7D14E4A74575C14D7B6C295DB46205",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4EDE79571E7D14E4A74575C14D7B6C295DB46205" : 0,
+    "8ADCFF42825E7B0AECFB02F57DDF22DD7BD20763" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "18B8F44F-F29D-4EAA-91DE-AFA06FF4FEF3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4EDE79571E7D14E4A74575C14D7B6C295DB46205" : "KinPix-iOS",
+    "8ADCFF42825E7B0AECFB02F57DDF22DD7BD20763" : "KinPix"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "KinPix",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "KinPix.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kinleague\/KinPix-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4EDE79571E7D14E4A74575C14D7B6C295DB46205"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/KinleagueInc\/KinPix.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8ADCFF42825E7B0AECFB02F57DDF22DD7BD20763"
+    }
+  ]
+}
